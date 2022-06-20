@@ -1,0 +1,23 @@
+two major classes:
+
+selector - select components subject to rules
+
+selector_rules:
+a config file (start with yaml, or maybe raw python. add json next)
+a list of "categories" (get the name from open sea): PROPERTIES
+within each category, a list of possibilities - and rarities
+
+
+combiner - combines selected components subject to rules
+
+
+TODO:
+
+- read config, check against directory - report errors
+- use config to generate outputs
+- remember, selector outputs is just a list of components
+need to define combiner structure
+
+- keep track of uniqueness
+- save/dont save - manual review?
+- or just save a ton

@@ -1,24 +1,30 @@
 asset_directory: art/snek_1
-project_name: snek_1
+project_name: snek_2
 properties:
   accessories:
-    Layer 2: 0.3333333333333333
-    Layer 3: 0.3333333333333333
-    Layer 4: 0.3333333333333333
+    inclusion_prob: 1
+    values:
+      Layer 2: 0.3333333333333333
+      Layer 3: 0.3333333333333333
+      Layer 4: 0.3333333333333333
   backgrounds:
-    bg1: 0.3333333333333333
-    bg2: 0.3333333333333333
-    bg3: 0.3333333333333333
+    inclusion_prob: 1
+    values:
+      bg1: 0.3333333333333333
+      bg2: 0.3333333333333333
+      bg3: 0.3333333333333333
   bodies:
-    body - blue: 0.3333333333333333
-    body - green: 0.3333333333333333
-    body - orange: 0.3333333333333333
-    body - plaid: 1
+    inclusion_prob: 1
+    values:
+      body - blue: 0.3333333333333333
+      body - green: 0.3333333333333333
+      body - orange: 0.3333333333333333
   eyes:
-    Layer 5: 0.3333333333333333
-    Layer 6: 0.3333333333333333
-    Layer 7: 0.3333333333333333
-  mouth:
-    Layer 1: 0.3333333333333333
-    Layer 2: 0.3333333333333333
-    Layer 3: 0.3333333333333333
+    inclusion_prob: 1
+    values:
+      Layer 5: 0.3333333333333333
+      Layer 6: 0.3333333333333333
+      Layer 7: 0.3333333333333333
+  neck:
+    inclusion_prob: 1
+    values: {}

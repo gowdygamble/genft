@@ -16,7 +16,15 @@ def norm_property_distribution(property_distribution):
 
 def norm_all_properties(property_dict):
     for k in property_dict:
-        norm_property_distribution(property_dict[k])
+        norm_property_distribution(property_dict[k]["values"])
+
+def check_normed_property_values(property_dist):
+    property_sum = 0
+    for value_name in property_dist:
+        property_sum += property_dist[value_name]
+
+    return property_sum
+
 
 def check_config_against_directory(config_fn):
     with open(config_fn, 'r') as stream:
@@ -60,7 +68,11 @@ def check_config_against_directory(config_fn):
             errors.append(err)
 
     print("4/4 Checking property distribution normalization")
-    print("NOT IMPLEMENTED")
+    for config_property_name in config_property_names:
+        pd = parsed_yaml["properties"][config_property_name]["values"]
+        dist_sum = check_normed_property_values(pd)
+        if dist_sum != 1:
+            errors.append("Property not normed: " + config_property_name)
 
     print("")
     print("--------------")
@@ -93,18 +105,23 @@ def check_property_against_assets(property_name, property_distribution_dict, pro
 
 def generate_config_from_directory(directory_name, project_name):
     property_folders = glob.glob(os.path.join(directory_name, "*"))
-    property_dict = {}
+    property_dict = {
+
+    }
 
     for property_folder in property_folders:
         property_name = os.path.basename(property_folder)
-        property_dict[property_name] = {}
+        property_dict[property_name] = {
+            "inclusion_prob": 1,
+            "values": {}
+        }
         property_files = glob.glob(os.path.join(property_folder, "*"))
 
         for property_file in property_files:
             basename = os.path.basename(property_file)
             basename = basename.split(".")[0]
             print(property_name, basename)
-            property_dict[property_name][basename] = 1
+            property_dict[property_name]["values"][basename] = 1
 
 
     norm_all_properties(property_dict)

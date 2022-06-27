@@ -1,7 +1,16 @@
-from genft_core import generate_config_from_directory, check_config_against_directory
+from selector import PropertySelector
 
-d = "art/snek_1"
 config_fn = "snek_2_config.yml"
 
 #generate_config_from_directory(d, "snek_2")
-check_config_against_directory(config_fn)
+#check_config_against_directory(config_fn)
+property_selector = PropertySelector(config_fn)
+
+#u = property_selector.compute_maximum_unique_combinations()
+
+batch = property_selector.create_batch(4)
+
+print(len(batch))
+for b in batch:
+    print(b)
+    print("")

@@ -4,27 +4,24 @@ properties:
   accessories:
     inclusion_prob: 1
     values:
-      Layer 2: 0.3333333333333333
-      Layer 3: 0.3333333333333333
-      Layer 4: 0.3333333333333333
+      Layer 2: 0.2
+      Layer 3: 0.3
+      Layer 4: 0.5
   backgrounds:
     inclusion_prob: 1
     values:
-      bg1: 0.3333333333333333
-      bg2: 0.3333333333333333
-      bg3: 0.3333333333333333
+      bg1: 0.1
+      bg2: 0.45
+      bg3: 0.45
   bodies:
     inclusion_prob: 1
     values:
-      body - blue: 0.3333333333333333
-      body - green: 0.3333333333333333
-      body - orange: 0.3333333333333333
+      body - blue: 0.333
+      body - green: 0.333
+      body - orange: 0.334
   eyes:
     inclusion_prob: 1
     values:
-      Layer 5: 0.3333333333333333
-      Layer 6: 0.3333333333333333
-      Layer 7: 0.3333333333333333
-  neck:
-    inclusion_prob: 1
-    values: {}
+      Layer 5: 0.3
+      Layer 6: 0.65
+      Layer 7: 0.05

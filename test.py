@@ -8,7 +8,7 @@ property_selector = PropertySelector(config_fn)
 
 #u = property_selector.compute_maximum_unique_combinations()
 
-batch = property_selector.create_batch(4)
+batch = property_selector.create_batch(5)
 
 print(len(batch))
 for b in batch:

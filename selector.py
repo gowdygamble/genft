@@ -28,7 +28,7 @@ class PropertySelector:
         # need to check if requested batch size is greater than all combinations
         # if so then just make all combinations and return them
 
-        while len(batch) <= batch_size:
+        while len(batch) < batch_size:
             entity = self.generate_entity()
             #print(entity)
             if entity not in batch:
@@ -55,16 +55,20 @@ class PropertySelector:
         inclusion_prob = self.config_dict['properties'][property_name]['inclusion_prob']
         inclusion_draw = random.random()
 
+        #print("sampling property, inclusion criteria: ", inclusion_draw, " / ", inclusion_prob)
+
         if inclusion_draw < inclusion_prob:
 
             property_value_draw = random.random()
             property_value_sum = 0
+            #print("property value draw: ", property_value_draw)
             # definitely something wrong here
-            # getting way too many of rare props 
+            # getting way too many of rare props
             for value_name in self.config_dict['properties'][property_name]['values'].keys():
                 value_prob = self.config_dict['properties'][property_name]['values'][value_name]
                 property_value_sum += value_prob
-                if property_value_sum < property_value_draw:
+                #print(value_name, property_value_sum)
+                if property_value_sum > property_value_draw:
                     return value_name
             return value_name
         else:
